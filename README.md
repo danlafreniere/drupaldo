@@ -29,7 +29,7 @@ Try to make the current todo list look as close to this mockup as possible. Curr
 4. Install the site from config with a sqlite database. (If you did 3, skip to 5)
 
     ```
-    $ drush site:install--db-url=sqlite://web/sites/default/files/.ht.sqlite --existing-config
+    $ drush site:install --db-url=sqlite://web/sites/default/files/.ht.sqlite --existing-config
     ```
 
 5. Create a test user, and login:
