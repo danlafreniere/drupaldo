@@ -52,13 +52,13 @@ Composer:
     b. Install the site from config with:
 
       ```
-      $ drush site:install --existing-config
+      $ ./vendor/bin/drush site:install --existing-config
       ```
 
 4. Install the site from config with a sqlite database. (If you did 3, skip to 5)
 
     ```
-    $ drush site:install --db-url=sqlite://web/sites/default/files/.ht.sqlite --existing-config
+    $ ./vendor/bin/drush site:install --db-url=sqlite://web/sites/default/files/.ht.sqlite --existing-config
     ```
 
 5. Create a test user, and login:
