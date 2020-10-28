@@ -12,9 +12,12 @@ Your primary objective is to adapt the current functionality to appear as close 
 
 Try to make the current todo list look as close to this mockup as possible. Currently the functionality of "mark as complete" works a little how I'd imagine the delete icon in the mockup should work. This is primarily a front end task, testing a developer's ability to manipulate a Drupal backend task to look different from how a backend developer left it. Adapting the backend code to allow the crossed-out (checked) functionality would be a bonus feature that I'm sure the "client" would be impressed by, but should not be the main focus.
 
-## Pre requirements
+## Prerequisites
+You will need the following before starting this project:
+
 Git:
   https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+  
 Composer:
   https://getcomposer.org/doc/00-intro.md
 
