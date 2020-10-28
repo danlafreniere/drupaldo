@@ -13,18 +13,36 @@ Your primary objective is to adapt the current functionality to appear as close 
 Try to make the current todo list look as close to this mockup as possible. Currently the functionality of "mark as complete" works a little how I'd imagine the delete icon in the mockup should work. This is primarily a front end task, testing a developer's ability to manipulate a Drupal backend task to look different from how a backend developer left it. Adapting the backend code to allow the crossed-out (checked) functionality would be a bonus feature that I'm sure the "client" would be impressed by, but should not be the main focus.
 
 ## Setup
-
-1. Install dependencies with composer:
+1. Clone this repository to your local computer.
     ```
+    $ git clone git@github.com:advisorwebsites/drupaldo.git
+    ```
+2. Install dependencies with composer:
+    ```
+    $ cd drupaldo/
     $ composer install
     ```
-2. Create `/web/sites/default/settings.local.php`, and add database settings.... Or skip to 4
+3. Create `/web/sites/default/settings.local.php`, and add database settings.... Or skip to 4 in case you are using SQLite database
+    a. Example for MySQL
+    ```
+    <?php
 
-3. Install the site from config with:
+    $databases = [];
+    $databases['default']['default'] = [
+      'driver' => 'mysql',
+      'database' => 'drupaldo',
+      'username' => 'root',
+      'password' => 'root',
+      'host' => 'localhost',
+      'prefix' => '',
+    ];
 
     ```
-    $ drush site:install --existing-config
-    ```
+    b. Install the site from config with:
+
+      ```
+      $ drush site:install --existing-config
+      ```
 
 4. Install the site from config with a sqlite database. (If you did 3, skip to 5)
 
@@ -35,8 +53,8 @@ Try to make the current todo list look as close to this mockup as possible. Curr
 5. Create a test user, and login:
 
     ```
-    $ drush user:create test
-    $ drush user:login --name=test
+    $ ./vendor/bin/drush user:create demo
+    $ ./vendor/bin/drush user:password demo "demo"
     ```
 
 6. Host the site:
@@ -46,8 +64,19 @@ Try to make the current todo list look as close to this mockup as possible. Curr
     $ php -S localhost:8080
     ```
 
-7. Visit localhost:8080 in browser, appending the path from drush user:login
+7. Login to your drupal website:
 
+    ```
+    localhost:8080/user with the demo:demo user
+    ```
+
+
+8. The todo list to work on:
+
+    ```
+    localhost:8080/todo
+    ```
+    
 ## Demo
 ![Watch the video](docs/drupaldo-demo.gif)
 
