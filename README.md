@@ -32,57 +32,34 @@ Composer:
     $ cd drupaldo/
     $ composer install
     ```
-3. Create `/web/sites/default/settings.local.php`, and add database settings.... Or skip to 4 in case you are using SQLite database.
-
-    a. Example for MySQL
-    ```
-    <?php
-
-    $databases = [];
-    $databases['default']['default'] = [
-      'driver' => 'mysql',
-      'database' => 'drupaldo',
-      'username' => 'root',
-      'password' => 'root',
-      'host' => 'localhost',
-      'prefix' => '',
-    ];
-
-    ```
-    b. Install the site from config with:
-
-      ```
-      $ ./vendor/bin/drush site:install --existing-config
-      ```
-
-4. Install the site from config with a sqlite database. (If you did 3, skip to 5)
+3. Install the site from config with:
 
     ```
     $ ./vendor/bin/drush site:install --db-url=sqlite://web/sites/default/files/.ht.sqlite --existing-config
     ```
 
-5. Create a test user, and login:
+4. Create a test user, and login:
 
     ```
     $ ./vendor/bin/drush user:create demo
     $ ./vendor/bin/drush user:password demo "demo"
     ```
 
-6. Host the site:
+5. Host the site:
 
     ```
     $ cd web
     $ php -S localhost:8080
     ```
 
-7. Login to your drupal website:
+6. Login to your drupal website:
 
     ```
     localhost:8080/user with the demo:demo user
     ```
 
 
-8. The todo list to work on:
+7. The todo list to work on:
 
     ```
     localhost:8080/todo
