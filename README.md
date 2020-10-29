@@ -37,6 +37,8 @@ Composer:
     ```
     $ ./vendor/bin/drush site:install --db-url=sqlite://web/sites/default/files/.ht.sqlite --existing-config
     ```
+    
+    Please note: non-Mac users will need to ensure [SQLite3](https://www.sqlite.org/index.html) is installed and running for this step.
 
 4. Create a test user, and login:
 
