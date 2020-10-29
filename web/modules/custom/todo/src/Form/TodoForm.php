@@ -176,7 +176,7 @@ class TodoForm extends FormBase {
 
     try {
       Node::create([
-        'type' => 'todo',
+        'type' => 'todo_item',
         'uid' => $this->currentUser()->id(),
         'title' => $form_state->getValue('title'),
       ])->save();
